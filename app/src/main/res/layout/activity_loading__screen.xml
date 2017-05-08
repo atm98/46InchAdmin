@@ -6,13 +6,31 @@
     android:layout_height="match_parent"
     tools:context="com.a46inch.a46inchadmin.Loading_Screen">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:background="#c08c08">
 
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="36dp" />
+
+        <TextView
+            android:id="@+id/Appname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="46Inch ADMIN"
+            android:textSize="55dp"
+            android:layout_marginBottom="143dp"
+            android:layout_above="@+id/progressBar2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
