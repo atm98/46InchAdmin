@@ -21,14 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Login_Screen"
-            android:label="@string/title_activity_login__screen"
-            android:parentActivityName=".Loading_Screen">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.a46inch.a46inchadmin.Loading_Screen" />
-        </activity>
+        <activity android:name=".Login_Screen" />
+        <activity android:name=".Home_Screen"></activity>
     </application>
 
 </manifest>
