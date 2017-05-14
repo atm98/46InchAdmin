@@ -41,5 +41,14 @@
             android:layout_below="@+id/AddProductbutton"
             android:layout_marginTop="41dp"
             android:text="UPDATE PRODUCT" />
+
+        <Button
+            android:id="@+id/ViewAllProductsbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/AddProductbutton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="37dp"
+            android:text="Button" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -25,7 +25,8 @@
         <activity android:name=".Home_Screen" />
         <activity android:name=".AddProduct_Screen" />
         <activity android:name=".DelProduct_Screen" />
-        <activity android:name=".UpdtProduct_Screen"></activity>
+        <activity android:name=".UpdtProduct_Screen" />
+        <activity android:name=".viewallProducts_Screen"></activity>
     </application>
 
 </manifest>
