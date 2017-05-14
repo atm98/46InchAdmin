@@ -22,7 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login_Screen" />
-        <activity android:name=".Home_Screen"></activity>
+        <activity android:name=".Home_Screen" />
+        <activity android:name=".AddProduct_Screen" />
+        <activity android:name=".DelProduct_Screen" />
+        <activity android:name=".UpdtProduct_Screen"></activity>
     </application>
 
 </manifest>

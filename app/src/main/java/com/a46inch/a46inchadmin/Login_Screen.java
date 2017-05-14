@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class Login_Screen extends AppCompatActivity {
-    private static final String TAG = "SignIn";
+    private static final String TAG = "Login_Screen";
     private FirebaseAuth mAuth; //declare FirebaseAuth object
     private EditText editTextEmail; //declare editText user email
     private EditText editTextPassword; //declare editText user password
@@ -92,9 +92,9 @@ public class Login_Screen extends AppCompatActivity {
                         }
                         else{
                             //if there is a successful sign in then finish this activity and start next activity
+                            progressDialog.setMessage("Signing In ....");
                             finish();
-
-
+                            progressDialog.dismiss();
                             startActivity(new Intent(getApplicationContext(),Home_Screen.class));
 
                         }
