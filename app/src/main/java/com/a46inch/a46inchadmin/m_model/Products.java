@@ -9,9 +9,9 @@ public class Products {
     private String Pdesc;
     private String Pprice;
     private String Pseller;
-    private String Pid;
+
     private String Pcatagory;
-    private int Pquant;
+    private String Pquant;
 
     public Products() {
         // ...
@@ -49,13 +49,7 @@ public class Products {
         Pseller = pseller;
     }
 
-    public String getPid() {
-        return Pid;
-    }
 
-    public void setPid(String pid) {
-        Pid = pid;
-    }
 
     public String getPcatagory() {
         return Pcatagory;
@@ -65,11 +59,11 @@ public class Products {
         Pcatagory = pcatagory;
     }
 
-    public int getPquant() {
+    public String getPquant() {
         return Pquant;
     }
 
-    public void setPquant(int pquant) {
+    public void setPquant(String pquant) {
         Pquant = pquant;
     }
 

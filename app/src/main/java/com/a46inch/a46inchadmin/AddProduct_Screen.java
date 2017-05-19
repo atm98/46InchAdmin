@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.a46inch.a46inchadmin.m_FireBase.FirebaseHelper;
@@ -17,12 +18,17 @@ import com.a46inch.a46inchadmin.m_model.Products;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.spec.ECField;
 
 
 public class AddProduct_Screen extends AppCompatActivity {
 
     private EditText nameEditTxt;
     private EditText desctxt;
+    private EditText priceTxt;
+    private EditText sellerTxt;
+    private EditText catagoryTxt;
+    private ECField quantityTxt;
     private DatabaseReference db;
     private FirebaseHelper helper;
     private ListView lv;
@@ -55,6 +61,13 @@ public class AddProduct_Screen extends AppCompatActivity {
         d.setContentView(R.layout.input_dialog);
         nameEditTxt= (EditText) d.findViewById(R.id.nameEditText);
         desctxt= (EditText) d.findViewById(R.id.descEditText);
+        EditText nameTxt= (EditText) findViewById(R.id.NameeditText);
+        EditText descTxt= (EditText) findViewById(R.id.DesceditText3);
+        EditText priceTxt = (EditText) findViewById(R.id.PriceeditText2);
+        EditText sellerTxt = (EditText) findViewById(R.id.SellereditText4);
+        EditText catagoryTxt = (EditText) findViewById(R.id.CatagoryeditText5);
+        EditText quantityTxt = (EditText) findViewById(R.id.QuantityeditText6);
+
         Button saveBtn= (Button) d.findViewById(R.id.saveBtn);
         //SAVE
         saveBtn.setOnClickListener(new View.OnClickListener() {
