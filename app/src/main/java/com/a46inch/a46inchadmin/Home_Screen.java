@@ -18,7 +18,7 @@ public class Home_Screen extends AppCompatActivity {
     private Button addProd;//declare addproduct button
     private Button delProd;//declare delproduct button
     private Button updtProd;//declare updateproduct button
-    private Button viewAll;//declare Viewproduct button
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class Home_Screen extends AppCompatActivity {
         addProd = (Button) findViewById(R.id.AddProductbutton);
         delProd = (Button) findViewById(R.id.DelProductbutton);
         updtProd = (Button) findViewById(R.id.UpdtProductbutton);
-        viewAll = (Button) findViewById(R.id.ViewAllProductsbutton);
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -42,12 +42,6 @@ public class Home_Screen extends AppCompatActivity {
                 // ...
             }
         };
-        viewAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Home_Screen.this,viewallProducts_Screen.class));
-            }
-        });
         addProd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

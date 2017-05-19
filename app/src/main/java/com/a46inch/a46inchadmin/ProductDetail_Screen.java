@@ -11,6 +11,6 @@ public class ProductDetail_Screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail__screen);
-        Prodname = (TextView) findViewById(R.id.ProductName);
+
     }
 }
