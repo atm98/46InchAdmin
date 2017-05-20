@@ -23,12 +23,12 @@ import java.security.spec.ECField;
 
 public class AddProduct_Screen extends AppCompatActivity {
 
-    private EditText nameEditTxt;
-    private EditText desctxt;
+    private EditText nameTxt;
+    private EditText descTxt;
     private EditText priceTxt;
     private EditText sellerTxt;
     private EditText catagoryTxt;
-    private ECField quantityTxt;
+    private EditText quantityTxt;
     private DatabaseReference db;
     private FirebaseHelper helper;
     private ListView lv;
@@ -59,27 +59,33 @@ public class AddProduct_Screen extends AppCompatActivity {
         Dialog d=new Dialog(this);
         d.setTitle("Save To Firebase");
         d.setContentView(R.layout.input_dialog);
-        nameEditTxt= (EditText) d.findViewById(R.id.nameEditText);
-        desctxt= (EditText) d.findViewById(R.id.descEditText);
-        EditText nameTxt= (EditText) findViewById(R.id.NameeditText);
-        EditText descTxt= (EditText) findViewById(R.id.DesceditText3);
-        EditText priceTxt = (EditText) findViewById(R.id.PriceeditText2);
-        EditText sellerTxt = (EditText) findViewById(R.id.SellereditText4);
-        EditText catagoryTxt = (EditText) findViewById(R.id.CatagoryeditText5);
-        EditText quantityTxt = (EditText) findViewById(R.id.QuantityeditText6);
+        nameTxt= (EditText) findViewById(R.id.NameeditText);
+        descTxt= (EditText) findViewById(R.id.DesceditText3);
+        priceTxt = (EditText) findViewById(R.id.PriceeditText2);
+        sellerTxt = (EditText) findViewById(R.id.SellereditText4);
+        catagoryTxt = (EditText) findViewById(R.id.CatagoryeditText5);
+        quantityTxt = (EditText) findViewById(R.id.QuantityeditText6);
 
-        Button saveBtn= (Button) d.findViewById(R.id.saveBtn);
+        Button saveBtn= (Button) d.findViewById(R.id.savebutton);
         //SAVE
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //GET DATA
-                String name=nameEditTxt.getText().toString();
-                String desc=desctxt.getText().toString();
+                String name=nameTxt.getText().toString();
+                String desc=descTxt.getText().toString();
+                String price = priceTxt.getText().toString();
+                String seller = sellerTxt.getText().toString();
+                String catagory = catagoryTxt.getText().toString();
+                String qauntity = quantityTxt.getText().toString();
                 //SET DATA
                 Products s= new Products();
                 s.setPname(name);
                 s.setPdesc(desc);
+                s.setPprice(price);
+                s.setPseller(seller);
+                s.setPcatagory(catagory);
+                s.setPquant(qauntity);
                 //SIMPLE VALIDATION
                 if(name.length()>0)
                 {
@@ -87,8 +93,12 @@ public class AddProduct_Screen extends AppCompatActivity {
                     if(helper.save(s))
                     {
                         //IF SAVED CLEAR EDITXT
-                        nameEditTxt.setText("");
-                        desctxt.setText("");
+                        nameTxt.setText("");
+                        descTxt.setText("");
+                        priceTxt.setText("");
+                        sellerTxt.setText("");
+                        catagoryTxt.setText("");
+                        quantityTxt.setText("");
                         final CustomAdapter adapter=new CustomAdapter(AddProduct_Screen.this,helper.retrieve());
                         lv.setAdapter(adapter);
                     }

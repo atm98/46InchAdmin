@@ -12,7 +12,8 @@
         android:hint="Products Name"
         android:inputType="textPersonName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/PriceeditText2"
@@ -24,7 +25,8 @@
         android:layout_marginTop="29dp"
         android:ems="10"
         android:hint="Product Price"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/DesceditText3"
@@ -36,7 +38,8 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Product Description"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/SellereditText4"
@@ -48,7 +51,8 @@
         android:layout_marginTop="38dp"
         android:ems="10"
         android:hint="Seller's Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/CatagoryeditText5"
@@ -60,7 +64,8 @@
         android:layout_marginTop="35dp"
         android:ems="10"
         android:hint="Product Catagory"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/QuantityeditText6"
@@ -72,15 +77,17 @@
         android:layout_marginTop="35dp"
         android:ems="10"
         android:hint="Product quantity"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textAlignment="center"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/savebutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="14dp"
         android:clickable="true"
-        android:text="Button" />
+        android:text="Button"
+        />
 </RelativeLayout>

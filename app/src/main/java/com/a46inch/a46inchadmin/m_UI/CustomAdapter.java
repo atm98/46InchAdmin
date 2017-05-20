@@ -45,18 +45,10 @@ public class CustomAdapter extends BaseAdapter{
             convertView= LayoutInflater.from(c).inflate(R.layout.model,viewGroup,false);
         }
         TextView nameTxt= (TextView) convertView.findViewById(R.id.NameeditText);
-        TextView descTxt= (TextView) convertView.findViewById(R.id.DesceditText3);
         TextView priceTxt = (TextView) convertView.findViewById(R.id.PriceeditText2);
-        TextView sellerTxt = (TextView) convertView.findViewById(R.id.SellereditText4);
-        TextView catagoryTxt = (TextView) convertView.findViewById(R.id.CatagoryeditText5);
-        TextView quantityTxt = (TextView) convertView.findViewById(R.id.QuantityeditText6);
         final Products s= (Products) this.getItem(position);
         nameTxt.setText(s.getPname());
-        descTxt.setText(s.getPdesc());
         priceTxt.setText(s.getPprice());
-        sellerTxt.setText(s.getPseller());
-        catagoryTxt.setText(s.getPcatagory());
-        quantityTxt.setText(s.getPquant());
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
