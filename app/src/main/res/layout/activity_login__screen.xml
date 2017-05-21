@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/passwordUser"
             android:layout_marginTop="34dp"
-            android:text="SING IN"
+            android:text="SIGN IN"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:textColor="#4fcfcf"
             android:layout_alignParentLeft="true"

@@ -28,6 +28,7 @@ public class AddProduct_Screen extends AppCompatActivity {
     private FirebaseHelper helper;
     private ListView lv;
     private FloatingActionButton fab ;
+    CustomAdapter adapter;
 
 
     @Override
@@ -35,11 +36,12 @@ public class AddProduct_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product__screen);
 
-
-        lv = (ListView) findViewById(R.id.lv);
         //INITIALIZE FIREBASE DB
-        db= FirebaseDatabase.getInstance().getReference();
+        db= FirebaseDatabase.getInstance().getReferenceFromUrl("https://inch-bd53c.firebaseio.com/").child("Products");
         helper=new FirebaseHelper(db);
+        lv = (ListView) findViewById(R.id.lv);
+        adapter =new CustomAdapter(this,helper.Populateall());
+        lv.setAdapter(adapter);
         fab = (FloatingActionButton) findViewById(R.id.addFab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,17 +52,18 @@ public class AddProduct_Screen extends AppCompatActivity {
 
 
 
+
     }
     public void InputDialog(){
         Dialog d=new Dialog(this);
         d.setTitle("Save To Firebase");
         d.setContentView(R.layout.input_dialog);
-        final EditText nameTxt= (EditText) findViewById(R.id.NameeditText);
-        final EditText descTxt= (EditText) findViewById(R.id.DesceditText3);
-        final EditText priceTxt = (EditText) findViewById(R.id.PriceeditText2);
-        final EditText sellerTxt = (EditText) findViewById(R.id.SellereditText4);
-        final EditText catagoryTxt = (EditText) findViewById(R.id.CatagoryeditText5);
-        final EditText quantityTxt = (EditText) findViewById(R.id.QuantityeditText6);
+        final EditText nameTxt= (EditText) d.findViewById(R.id.NameeditText);
+        final EditText descTxt= (EditText) d.findViewById(R.id.DesceditText3);
+        final EditText priceTxt = (EditText) d.findViewById(R.id.PriceeditText2);
+        final EditText sellerTxt = (EditText) d.findViewById(R.id.SellereditText4);
+        final EditText catagoryTxt = (EditText) d.findViewById(R.id.CatagoryeditText5);
+        final EditText quantityTxt = (EditText) d.findViewById(R.id.QuantityeditText6);
 
         Button saveBtn= (Button) d.findViewById(R.id.savebutton);
         //SAVE
@@ -68,12 +71,12 @@ public class AddProduct_Screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //GET DATA
-                final String name=nameTxt.getText().toString();
-                final String desc=descTxt.getText().toString();
-                final String price = priceTxt.getText().toString();
-                final String seller = sellerTxt.getText().toString();
-                final String catagory = catagoryTxt.getText().toString();
-                final String qauntity = quantityTxt.getText().toString();
+                String name=nameTxt.getText().toString();
+                String desc=descTxt.getText().toString();
+                String price = priceTxt.getText().toString();
+                String seller = sellerTxt.getText().toString();
+                String catagory = catagoryTxt.getText().toString();
+                String qauntity = quantityTxt.getText().toString();
                 //SET DATA
                 Products s= new Products();
                 s.setPname(name);
@@ -95,7 +98,7 @@ public class AddProduct_Screen extends AppCompatActivity {
                         sellerTxt.setText("");
                         catagoryTxt.setText("");
                         quantityTxt.setText("");
-                        final CustomAdapter adapter=new CustomAdapter(AddProduct_Screen.this,helper.retrieve());
+                        adapter=new CustomAdapter(AddProduct_Screen.this,helper.retrieve());
                         lv.setAdapter(adapter);
                     }
                 }else

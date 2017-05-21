@@ -30,9 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Description....................."
-            android:lines="10"
-            android:id="@+id/descTxt"
+            android:text="PRICE"
+            android:id="@+id/priceTxt"
             android:padding="10dp"
             android:layout_alignParentLeft="true"
             />

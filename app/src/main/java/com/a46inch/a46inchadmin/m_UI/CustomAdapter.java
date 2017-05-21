@@ -40,12 +40,9 @@ public class CustomAdapter extends BaseAdapter{
     }
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-        if(convertView==null)
-        {
-            convertView= LayoutInflater.from(c).inflate(R.layout.model,viewGroup,false);
-        }
-        TextView nameTxt= (TextView) convertView.findViewById(R.id.NameeditText);
-        TextView priceTxt = (TextView) convertView.findViewById(R.id.PriceeditText2);
+        convertView= LayoutInflater.from(c).inflate(R.layout.model,viewGroup,false);
+        TextView nameTxt= (TextView) convertView.findViewById(R.id.nameTxt);
+        TextView priceTxt = (TextView) convertView.findViewById(R.id.priceTxt);
         final Products s= (Products) this.getItem(position);
         nameTxt.setText(s.getPname());
         priceTxt.setText(s.getPprice());

@@ -3,18 +3,23 @@ package com.a46inch.a46inchadmin.m_FireBase;
 /**
  * Created by S.H.I.E.L.D on 5/17/2017.
  */
+import android.util.Log;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.a46inch.a46inchadmin.m_model.Products;
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 
 public class FirebaseHelper {
     DatabaseReference db;
+    public static final String TAG="FirebaseHelper";
     Boolean saved=null;
     ArrayList<Products> products = new ArrayList<>();
 
@@ -28,13 +33,17 @@ public class FirebaseHelper {
 
         for (DataSnapshot ds : dataSnapshot.getChildren())
         {
+
             Products product =ds.getValue(Products.class);
             products.add(product);
+
         }
     }
     //READ BY HOOKING ONTO DATABASE OPERATION CALLBACKS
     public ArrayList<Products> retrieve() {
+
         db.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 fetchData(dataSnapshot);
@@ -54,6 +63,21 @@ public class FirebaseHelper {
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+        return products;
+    }
+    public ArrayList<Products> Populateall(){
+        db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                fetchData(dataSnapshot);
             }
 
             @Override
