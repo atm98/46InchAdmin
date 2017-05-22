@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.view.LayoutInflater;
 import android.widget.TextView;
-import android.widget.TextView;
+
 
 import com.a46inch.a46inchadmin.ProductDetail_Screen;
 import com.a46inch.a46inchadmin.R;
@@ -40,7 +40,11 @@ public class CustomAdapter extends BaseAdapter{
     }
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-        convertView= LayoutInflater.from(c).inflate(R.layout.model,viewGroup,false);
+        if(convertView==null) {
+
+            convertView = LayoutInflater.from(c).inflate(R.layout.model, viewGroup, false);
+
+        }
         TextView nameTxt= (TextView) convertView.findViewById(R.id.nameTxt);
         TextView priceTxt = (TextView) convertView.findViewById(R.id.priceTxt);
         final Products s= (Products) this.getItem(position);

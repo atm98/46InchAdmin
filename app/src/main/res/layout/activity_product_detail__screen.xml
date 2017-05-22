@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.a46inch.a46inchadmin.ProductDetail_Screen">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:fillViewport="false">
 
-    <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-    </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/nametextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/ptextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs."
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/pricetextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Price"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/ptextView"
+                    android:layout_toEndOf="@+id/ptextView" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/desctextView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Description..........."
+            />
+
+        <TextView
+            android:id="@+id/sellertextView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seller Name" />
+
+        <TextView
+            android:id="@+id/catagorytextView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Catagory" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/qtextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="No.of Peices Left:" />
+
+            <TextView
+                android:id="@+id/quantitytextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/qtextView"
+                android:layout_toRightOf="@+id/qtextView"
+                android:text="Product Quantity"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
